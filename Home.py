@@ -1,7 +1,12 @@
 import streamlit as st
+import datetime as dt
 
-i = 0
 #%%
+day = dt.date(year=2023, month=11, day=13)
+today = dt.date.today()
+
+#%%
+i = 0
 i = i+1
 st.markdown(f"""
 ## Question {i}  
@@ -21,7 +26,7 @@ c. `[4,2,3]`
 d. `[1,4,3]`  
 """)
 
-on = st.toggle(f'**Answer & Explanation {i}**', value=False)
+on = st.toggle(f'**Answer & Explanation {i}**', disabled=not(day==today))
 if on:
     st.write('Answer: d')
     st.write('Explanation: The second line calls the 1st index of the list, where 0 is the most basic element. The equals sign is used for assignment, so 4 is assigned to the position 1 in the list.')
@@ -44,7 +49,7 @@ b. `4`
 c. `8`  
 d. `len([1, 1, 2, 2, 3, 3, 3, 4])`   
 """)
-on = st.toggle(f'**Answer & Explanation {i}**', value=False)
+on = st.toggle(f'**Answer & Explanation {i}**', disabled=not(day==today))
 if on:
     st.write('Answer: c')
     st.write('Explanation: Although the `list` contains 8 elements, a `set` only contains unique elements, eliminating one `1`, one `2`, and two `3`s. Casting the list as a set eliminates repeats, leaving only `{1,2,3,4}`, containing `4` elements.')
@@ -69,7 +74,7 @@ d. `[4,2,3]`
 e. `[1,4,3]`  
 """)
 
-on = st.toggle(f'**Answer & Explanation {i}**', value=False)
+on = st.toggle(f'**Answer & Explanation {i}**', disabled=not(day==today))
 if on:
     st.write('Answer: a')
     st.write('Because `a` is defined with parentheses, it is a tuple, which is immutable (cannot be altered).')
@@ -104,7 +109,7 @@ d. `a` and `b` refer to the same objects but have different content.
 d. `b` is an empty list.  
 """)
 
-on = st.toggle(f'**Answer & Explanation {i}**', value=False)
+on = st.toggle(f'**Answer & Explanation {i}**', disabled=not(day==today))
 if on:
     st.write('Answer: c')
     st.write('For mutables, = makes the right object refer to the left one. In contrast, the Python shortcut with indexing `:` makes a new copy of a mutable with its containing elements. Therefore, a and b are different objects, but each with the same elements.')
@@ -127,7 +132,7 @@ d. ', world!'
 e. 'o, world!'  
 """)
 
-on = st.toggle(f'**Answer & Explanation {i}**', value=False)
+on = st.toggle(f'**Answer & Explanation {i}**', disabled=not(day==today))
 if on:
     st.write('Answer: d')
     st.write('This indexing returns all characters in the position 5 or later.')
@@ -142,7 +147,7 @@ a. A for loop
 b. A while loop  
 """)
 
-on = st.toggle(f'**Answer & Explanation {i}**', value=False)
+on = st.toggle(f'**Answer & Explanation {i}**', disabled=not(day==today))
 if on:
     st.write('Answer: b')
     st.write('This process should continue until a condition is met, which has a clear definition, but not a clear number of steps. This means the coin should be flipped while fewer than ten heads arrive, which requires a while loop.')
@@ -157,7 +162,7 @@ a. A for loop
 b. A while loop  
 """)
 
-on = st.toggle(f'**Answer & Explanation {i}**', value=False)
+on = st.toggle(f'**Answer & Explanation {i}**', disabled=not(day==today))
 if on:
     st.write('Answer: a')
     st.write('In this case, we know the number of steps beforehand. This is a situation for which a for loop is appropriate.')
@@ -182,7 +187,7 @@ d. 8
 e. 10  
 """)
 
-on = st.toggle(f'**Answer & Explanation {i}**', value=False)
+on = st.toggle(f'**Answer & Explanation {i}**', disabled=not(day==today))
 if on:
     st.write('Answer: d')
     st.write('x will be doubled starting with 1 until it reaches or exceeds 5. 8 is the number that meets this criterion.')
@@ -211,7 +216,7 @@ c. 2
 d. 3  
 """)
 
-on = st.toggle(f'**Answer & Explanation {i}**', value=False)
+on = st.toggle(f'**Answer & Explanation {i}**', disabled=not(day==today))
 if on:
     st.write('Answer: c')
     st.write('This code will print either "negative" or "non-negative" for each element in the tuple, of which there are three total.')
@@ -228,7 +233,7 @@ c. A set of string city names, latitudes, and longitudes.
 d. A dict with string city name keys and tuple latitude/longitude values.  
 """)
 
-on = st.toggle(f'**Answer & Explanation {i}**', value=False)
+on = st.toggle(f'**Answer & Explanation {i}**', disabled=not(day==today))
 if on:
     st.write('Answer: d')
     st.write('A dict allows for values to be of any type, with keys that are immutable. A natural choice for city names is strings, and their latitude and longitude can be represented by an iterable (such as a tuple), making a dict an appropriate data type.')
@@ -259,7 +264,7 @@ e. 1; 2; 4
 f. 1; 2; 3; 4  
 """)
 
-on = st.toggle(f'**Answer & Explanation {i}**', value=False)
+on = st.toggle(f'**Answer & Explanation {i}**', disabled=not(day==today))
 if on:
     st.write('Answer: e')
     st.write('Addition (`+`) is polymorphic for two strings, and pairs of many numeric types. However, + is not defined for strings and numeric values.')
@@ -283,7 +288,7 @@ d. [0, 1, 4, 9, 16]
 e. [1, 4, 9, 16, 25]  
 """)
 
-on = st.toggle(f'**Answer & Explanation {i}**', value=False)
+on = st.toggle(f'**Answer & Explanation {i}**', disabled=not(day==today))
 if on:
     st.write('Answer: d')
     st.write('This is an example of a list comprehension, in which a list is created containing elements specified in the inside expression (i.e., `x**2`), performed for each element in the iterable (i.e., `range(5)`).')
@@ -313,7 +318,7 @@ c. 2; 2; 2
 d. 1; 2; 2  
 """)
 
-on = st.toggle(f'**Answer & Explanation {i}**', value=False)
+on = st.toggle(f'**Answer & Explanation {i}**', disabled=not(day==today))
 if on:
     st.write('Answer: b')
     st.write('`x` is first defined globally, with value `1`. Then, my_function creates a variable x with local scope. Therefore, its value does not extend beyond its use in the function.')
@@ -337,7 +342,7 @@ c. function
 d. string  
 """)
 
-on = st.toggle(f'**Answer & Explanation {i}**', value=False)
+on = st.toggle(f'**Answer & Explanation {i}**', disabled=not(day==today))
 if on:
     st.write('Answer: b')
     st.write('Explanation: `math.pi` is an floating point approximation to `π` (a real number).')
@@ -360,7 +365,7 @@ b. `float` (real number)
 c. function  
 d. string  
 """)
-on = st.toggle(f'**Answer & Explanation {i}**', value=False)
+on = st.toggle(f'**Answer & Explanation {i}**', disabled=not(day==today))
 if on:
     st.write('Answer: c')
     st.write('Explanation: `math.cos` takes in numeric values (in radians) as input and returns its cosine as output.')
@@ -386,7 +391,7 @@ print pick_one(False, 'sunny', 'rainy')
 ```
 """)
 
-on = st.toggle(f'**Solution {i}**', value=False)
+on = st.toggle(f'**Solution {i}**', disabled=not(day==today))
 if on:
     st.markdown("""
 ```python
@@ -425,7 +430,7 @@ print triangular(10)
 ```
 """)
 
-on = st.toggle(f'**Solution {i}**', value=False)
+on = st.toggle(f'**Solution {i}**', disabled=not(day==today))
 if on:
     st.markdown("""
 ```python
@@ -468,7 +473,7 @@ def proc3(input_list):
 ```
 """)
 
-on = st.toggle(f'**Solution {i}**', value=False)
+on = st.toggle(f'**Solution {i}**', disabled=not(day==today))
 if on:
     st.markdown("""1, 2""")
 
@@ -497,7 +502,7 @@ print remove_tags("This is plain text.")
 ```
 """)
 
-on = st.toggle(f'**Solution {i}**', value=False)
+on = st.toggle(f'**Solution {i}**', disabled=not(day==today))
 if on:
     st.markdown("""
 ```python
@@ -528,6 +533,7 @@ st.markdown(f"""
 ## Question {i}: Date Converter  
 Write a procedure date_converter which takes two inputs. The first is  a dictionary and the second a string. The string is a valid date in the format month/day/year. The procedure should return the date written in the form <day> <name of month> <year>.
 """)
+
 st.markdown("""
 ```python
 english = {1:"January", 2:"February", 3:"March", 4:"April", 5:"May", 
@@ -554,7 +560,7 @@ print(date_converter(swedish, '12/5/1791'))
 Hint: int('12') converts the string '12' to the integer 12.
 """)
 
-on = st.toggle(f'**Solution {i}**', value=False)
+on = st.toggle(f'**Solution {i}**', disabled=not(day==today))
 if on:
     st.markdown("""
 ```python
@@ -596,7 +602,7 @@ def proc_03(n):
 Hint: int('12') converts the string '12' to the integer 12.
 """)
 
-on = st.toggle(f'**Solution {i}**', value=False)
+on = st.toggle(f'**Solution {i}**', disabled=not(day==today))
 if on:
     st.write('Answer: proc_01')
 
@@ -620,7 +626,7 @@ print longest_repetition([])
 ```
 """)
 
-on = st.toggle('**Solution 22**', value=False)
+on = st.toggle('**Solution 22**', disabled=not(day==today))
 if on:
     st.markdown("""
 ```python
@@ -650,5 +656,5 @@ def longest_repetition(itr):
 ```
 """)
 
-import datetime as dt
-st.text(dt.datetime.now())
+#%%
+
